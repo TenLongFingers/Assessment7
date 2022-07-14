@@ -20,7 +20,7 @@ function getFalseSizedArray(size) {
 }
 function getTrueSizedArray(size) {
   let array = [];
-  for (let i = -100; i < size; i++) {
+  for (let i = -50; i < size; i++) {
     array.push(i);
   }
   return array;
@@ -43,7 +43,7 @@ console.log("Results for add zero function");
 console.log("true", resultsTrue.preciseWords);
 console.log("false", resultsFalse.preciseWords);
 
-//ding dong I was wrong
+//ding dong I was wrong. I really thought it would hit -50 in the true array and stop the function, since it returned truthy.
 
 //2) Unique Characters
 const hasUniqueChars = (str) => {
