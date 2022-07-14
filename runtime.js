@@ -49,6 +49,31 @@ console.log("Results for the extraLargeArray");
 console.log("insert", resultsInsert.preciseWords);
 console.log("append", resultsAppend.preciseWords);
 
+// $ node runtime.js
+// Results for the tinyArray
+// insert 86.6 μs
+// append 65.3 μs
+
+// $ node runtime.js
+// Results for the smallArray
+// insert 40.9 μs
+// append 73.4 μs
+
+// $ node runtime.js
+// Results for the mediumArray
+// insert 126.3 μs
+// append 108.8 μs
+
+// $ node runtime.js
+// Results for the largeArray
+// insert 7.1046 ms
+// append 384.2 μs
+
+// $ node runtime.js
+// Results for the extraLargeArray
+// insert 731.9209 ms
+// append 2.8549 ms
+
 //The doublerAppend function has a big difference in runtime depending on the size of the array. DoublerAppend is mucher slower than doublerInsert when the array is bigger,
 //but once it passes the medium sized array, it doublerAppend is much faster than doublerInsert.
 //doublerInsert isn't as heavily affected by the size difference. This means doublerAppend scales logarithmically, and doublerInsert does not.

@@ -9,7 +9,7 @@ const addToZero = (arr) => {
     return false;
   }
 };
-//I think it'll be fairly slow, but the good thing about this code is that it stops as soon as it hits a true statement, so that should help.
+//I think it'll be fairly slow, because it's o(n^2), but the good thing about this code is that it stops as soon as it hits a true statement, so that should help.
 //i kinda wanna test it though:
 function getFalseSizedArray(size) {
   let array = [];
@@ -44,3 +44,40 @@ console.log("true", resultsTrue.preciseWords);
 console.log("false", resultsFalse.preciseWords);
 
 //ding dong I was wrong
+
+//2) Unique Characters
+const hasUniqueChars = (str) => {
+  for (let i = 0; i < str.length; i++)
+    for (let j = i + 1; j < str.length; j++)
+      if (str[i] == str[j]) {
+        return false;
+      }
+  return true;
+};
+console.log(hasUniqueChars("Monday"));
+console.log(hasUniqueChars("Moonday"));
+//This scales logarithmically so it's not as efficient as is probably should be. it's o(n^2)
+
+//3) Pangram Sentence
+let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+const isPangram = (str) => {
+  return alphabet.every((x) => str.includes(x));
+};
+console.log(isPangram("pack my box with five dozen liquor jugs"));
+console.log(isPangram("javascript is my favorite coding language"));
+//I think this is the fastest of my functions because it doesn't have to loop through as much. Once it finds the letter it's looking for, it moves on.
+
+//4) Longest Word
+const findLongestWord = (arr) => {
+  let testLength = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > testLength) {
+      let testLength = arr[i].length;
+      longest = arr[i];
+    }
+  }
+};
+findLongestWord(["hi", "hello", "worldwide"]);
+console.log(longest);
+//For a for loop I think this moves really fast. Because the testLength variable is set to the longest word so far, so it's more precise and efficient than incrementing the testLength one integer at a time.
